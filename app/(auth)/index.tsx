@@ -26,8 +26,10 @@ export default function LoginScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.form}>
-        <ThemedText type="title" style={styles.title}>로그인</ThemedText>
-        
+        <ThemedText type="title" style={styles.title}>
+          로그인
+        </ThemedText>
+
         <TextInput
           style={styles.input}
           placeholder="이메일"
@@ -36,7 +38,7 @@ export default function LoginScreen() {
           keyboardType="email-address"
           autoCapitalize="none"
         />
-        
+
         <TextInput
           style={styles.input}
           placeholder="비밀번호"
@@ -45,17 +47,11 @@ export default function LoginScreen() {
           secureTextEntry
         />
 
-        <TouchableOpacity 
-          style={styles.button}
-          onPress={handleLogin}
-        >
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <ThemedText style={styles.buttonText}>로그인</ThemedText>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          onPress={() => router.push('/register')}
-          style={styles.linkButton}
-        >
+        <TouchableOpacity onPress={() => router.push('/register')} style={styles.linkButton}>
           <ThemedText style={styles.linkText}>계정이 없으신가요? 회원가입하기</ThemedText>
         </TouchableOpacity>
       </View>

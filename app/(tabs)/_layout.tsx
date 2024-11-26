@@ -32,14 +32,12 @@ export default function TabLayout() {
           default: {},
         }),
         headerRight: () => (
-          <TouchableOpacity 
-            onPress={signOut}
-            style={{ marginRight: 15 }}
-          >
+          <TouchableOpacity onPress={signOut} style={{ marginRight: 15 }}>
             <ThemedText style={{ color: '#007AFF' }}>로그아웃</ThemedText>
           </TouchableOpacity>
         ),
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{

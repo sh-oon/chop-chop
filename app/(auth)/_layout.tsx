@@ -1,41 +1,39 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { Stack } from 'expo-router';
 import { Platform } from 'react-native';
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function AuthLayout() {
   return (
-    <Tabs
+    <Stack
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          default: {
-            display: 'none',
-          },
+        animation: Platform.select({
+          ios: 'slide_from_right',
+          android: 'slide_from_right',
         }),
-      }}>
-      <Tabs.Screen
-        name="login"
+        gestureEnabled: Platform.OS === 'ios',
+        gestureDirection: 'horizontal',
+        animationDuration: 200,
+        presentation: 'card',
+      }}
+    >
+      <Stack.Screen
+        name="index"
         options={{
-          title: 'Login',
+          animation: Platform.select({
+            ios: 'slide_from_left',
+            android: 'slide_from_left',
+          }),
         }}
       />
-      <Tabs.Screen
+      <Stack.Screen
         name="register"
         options={{
-          title: 'Explore',
+          animation: Platform.select({
+            ios: 'slide_from_right',
+            android: 'slide_from_right',
+          }),
         }}
       />
-    </Tabs>
+    </Stack>
   );
 }
