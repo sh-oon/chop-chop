@@ -25,8 +25,10 @@ export default function RegisterScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.form}>
-        <ThemedText type="title" style={styles.title}>회원가입</ThemedText>
-        
+        <ThemedText type="title" style={styles.title}>
+          회원가입
+        </ThemedText>
+
         <TextInput
           style={styles.input}
           placeholder="이메일"
@@ -35,7 +37,7 @@ export default function RegisterScreen() {
           keyboardType="email-address"
           autoCapitalize="none"
         />
-        
+
         <TextInput
           style={styles.input}
           placeholder="비밀번호"
@@ -43,7 +45,7 @@ export default function RegisterScreen() {
           onChangeText={setPassword}
           secureTextEntry
         />
-        
+
         <TextInput
           style={styles.input}
           placeholder="비밀번호 확인"
@@ -52,17 +54,11 @@ export default function RegisterScreen() {
           secureTextEntry
         />
 
-        <TouchableOpacity 
-          style={styles.button}
-          onPress={handleRegister}
-        >
+        <TouchableOpacity style={styles.button} onPress={handleRegister}>
           <ThemedText style={styles.buttonText}>가입하기</ThemedText>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          onPress={() => router.back()}
-          style={styles.linkButton}
-        >
+        <TouchableOpacity onPress={() => router.back()} style={styles.linkButton}>
           <ThemedText style={styles.linkText}>이미 계정이 있으신가요? 로그인하기</ThemedText>
         </TouchableOpacity>
       </View>

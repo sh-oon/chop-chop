@@ -10,7 +10,6 @@ import { Pressable, Text } from 'react-native';
 import { Link } from 'expo-router';
 
 export default function TabTwoScreen() {
-
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
@@ -21,8 +20,8 @@ export default function TabTwoScreen() {
           name="chevron.left.forwardslash.chevron.right"
           style={styles.headerImage}
         />
-      }>
-      
+      }
+    >
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Explore</ThemedText>
       </ThemedView>
